@@ -26,12 +26,11 @@ class LinkedList:
             current = current.next
         current.next = Node(data)
 
+    def __str__(self):
+        return f'[{self.head.data}]'
 
 ll = LinkedList()
-ll.append('꼬부기')
+ll.append('꼬부기') # head
 ll.append('피카츄')
 ll.append('파이리')
-# print(ll.head.data)
-# print(ll.head.next.data)
-#print(ll.head.next.next.data)
 print(ll)
