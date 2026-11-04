@@ -1,7 +1,3 @@
-import random
-from ipaddress import ip_address
-
-
 class Node:
     def __init__(self, data, next=None):
         self.data = data
@@ -35,20 +31,23 @@ class LinkedList:
         """
         노드 검색 함수
         :param target: 찾고자 하는 노드 데이터 값
-        :return: True or False
+        :return: 문자열
         """
         current = self.head
         while current.next:
             if current.data == target:
-                return True  # 찾고자 하는 노드를 찾음
+                return f"{target}을(를) 찾았습니다!"  # target을(를) 찾았습니다!
             else:
                 current = current.next  # 노드 이동
-        return False
+        return f"{target}을(를) 찾을 수 없습니다." # target을(를) 찾을 수 없습니다.
 
 
-    def remove(self, data):
-        pass
-
+    def remove(self, target):
+        """
+        노드 제거 함수
+        :param target: 제거할 데이터 값
+        :return: None
+        """
     def __str__(self):  # 매직메서드로 print 함수등에 출력할 내용을 정리
         n = self.head
         while n is not None:
@@ -65,3 +64,5 @@ pokemon_list.append('파이리')
 print(pokemon_list)
 pokemon_list.append('라이츄')
 print(pokemon_list)
+print(pokemon_list.search('뮤'))
+print(pokemon_list.search('리자몽'))
