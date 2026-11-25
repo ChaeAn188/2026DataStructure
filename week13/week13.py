@@ -1,6 +1,12 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
 class Stack:
     def __init__(self):
-        self.items = list()   # self.items = []
+        self.items = list()  # self.items = []
 
     def push(self, item):
         """
@@ -24,7 +30,7 @@ class Stack:
         :return:
         """
         return self.items[-1]  # 역방향
-        #return self.items[len(self.items)-1]  # 정방향
+        # return self.items[len(self.items)-1]  # 정방향
 
     def is_empty(self):
         """
@@ -40,6 +46,7 @@ class Stack:
         """
         return len(self.items)
 
+
 subjects = Stack()
 artists = Stack()
 artists.push("핑클")
@@ -52,5 +59,5 @@ print(artists.peek())
 print(artists.size())
 print(subjects.size())
 print(artists.is_empty())
-#help(Stack.pop)
+# help(Stack.pop)
 help(Stack)  # Docstring
